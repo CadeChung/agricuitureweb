@@ -1,83 +1,66 @@
 <?php
 session_start();
-include "./db_conn.php";
+include "db/db_conn.php";
 if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
-
-    <!DOCTYPE html>
-    <html>
+    <!doctype html>
+    <html lang="en">
 
     <head>
-        <title>使用者首頁</title>
-        <meta charset="UTF-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- custom css -->
+        <title>智慧農業物聯網平台</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/homepage.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
-        
     </head>
 
     <body>
-    <div class = "body" ></div>
-        <!-- Sidebar -->
-        <div class="w3-flat-midnight-blue w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
-            <a class="thick w3-padding w3-xlarge w3-text-white w3-bar-block w3-bar-item w3-button w3-large w3-hover-black" 
-                    onclick="w3_close()">關閉 &times;</a>
-
-            <a href="#" class="thick w3-padding w3-xlarge w3-text-white w3-bar-item w3-hover-red">
-                <img src="https://cdn-icons-png.flaticon.com/32/1057/1057118.png">
-                使用者首頁
-            </a>
-            <a href="#" class="thick w3-padding w3-xlarge w3-text-white w3-bar-item w3-hover-green">
-                <img src="https://cdn-icons-png.flaticon.com/32/3408/3408591.png">
-                即時數據
-            </a>
-            <a href="#" class="thick w3-padding w3-xlarge w3-text-white w3-bar-item w3-hover-orange">
-                <img src="https://cdn-icons-png.flaticon.com/32/921/921591.png">
-                歷史數據
-            </a>
-            <link href="assets/css/sidebar.css" rel="stylesheet">
-            <!-- script -->
-            <script src="assets/js/sidebar.js"></script>
-        </div>
-
-        <div id="main">
-            <div class="w3-teal">
-            <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-                <div class="w3-container w3-xlarge w3-teal">
-                    <h1>
-                        <img src="assets/images/logo.png"> 
-                        智慧農業平台
-                    </h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="containet d-flex justify-content-center 
-        align-items-center" style="min-height: 100vh">
-            <?php if ($_SESSION['username'] == 'admin') { ?>
-                <!-- For Admin -->
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/images/admin.png" class="card-img-top" alt="admin image">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">
-                            <?= $_SESSION['username'] ?>
-                        </h5>
-                        <a href="logout.php" class="btn btn-dark">
-                            Logout</a>
+        <?php if ($_SESSION['username'] == 'admin') { ?>
+            <!-- For Admin -->
+            <div class="wrapper d-flex align-items-stretch">
+                <nav id="sidebar">
+                    <div class="custom-menu">
+                        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        </button>
                     </div>
-                </div>
-                <div class="p-3">
+                    <div class="img bg-wrap text-center py-4" style="background-image: url(assets/images/bg_1.jpg);">
+                        <div class="user-logo">
+                            <div class="img" style="background-image: url(assets/images/users.png);"></div>
+                            <h3>管理員</h3>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled components mb-5">
+                        <li class="active">
+                            <a href="homepage.php"><span class="fa fa-home mr-3"></span> 首頁</a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:1880/ui"><span class="fa fa-eye mr-3"></span> 網頁儀錶板</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fa fa-database mr-3"></span> 歷史數據</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fa fa-cog mr-3"></span> 設定</a>
+                        </li>
+                        <li>
+                            <a href="logout.php"><span class="fa fa-sign-out mr-3"></span> 登出帳號</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Page Content  -->
+                <div id="content" class="p-4 p-md-5 pt-5">
+                    <header class="w3-container w3-theme w3-padding-64 w3-center">
+                        <h1 class="w3-xxxlarge w3-padding-16">智慧農業物聯網平台</h1>
+                    </header>
                     <?php include 'php/members.php';
                     if (mysqli_num_rows($res) > 0) { ?>
-
-                        <h1 class="display-4 fs-1">使用者帳號列表</h1>
+                        <h1 class="mb-4">使用者帳號管理</h1>
                         <table class="table" style="width: 32rem;">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">帳號</th>
+                                    <th scope="col">已註冊帳號</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -94,23 +77,68 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
                         </table>
                     <?php } ?>
                 </div>
-            <?php } else { ?>
-                <!-- FORM USER -->
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/images/users.png" class="card-img-top" alt="user image">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">
-                            <?= $_SESSION['username'] ?>
-                        </h5>
-                        <a href="logout.php" class="btn btn-dark">
-                            Logout</a>
+            </div>
+        <?php } else { ?>
+            <div class="wrapper d-flex align-items-stretch">
+                <nav id="sidebar">
+                    <div class="custom-menu">
+                        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        </button>
                     </div>
+                    <div class="img bg-wrap text-center py-4" style="background-image: url(assets/images/bg_1.jpg);">
+                        <div class="user-logo">
+                            <div class="img" style="background-image: url(assets/images/users.png);"></div>
+                            <h3>使用者</h3>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled components mb-5">
+                        <li class="active">
+                            <a href="homepage.php"><span class="fa fa-home mr-3"></span> 首頁</a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:1880/ui"><span class="fa fa-eye mr-3"></span> 網頁儀錶板</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fa fa-database mr-3"></span> 歷史數據</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fa fa-cog mr-3"></span> 設定</a>
+                        </li>
+                        <li>
+                            <a href="logout.php"><span class="fa fa-sign-out mr-3"></span> 登出帳號</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Page Content  -->
+                <div id="content" class="w3-container w3-margin-bottom" style="background-image: url(assets/images/bg_2.png);">
+                    <h1 class="img w3-xxxlarge w3-padding-16 w3-center">
+                    智慧農業物聯網平台
+                    </h1>
+                    <iframe align="right" src="https://www.google.com/maps/d/u/0/embed?mid=1EPqt-noF3wpsN97MJy2_s8-dFSXfaE8&ehbc=2E312F" width="840" height="480">
+                    </iframe>
+                    <ul class="w3-ul w3-card" style="width:50%">
+                    <a class="h1 w3-left w3-black">花卉研究室溫室場域導覽
+                        <li class ="h2 w3-black">經度：120.52674</li>
+                        <li class ="h2 w3-black">緯度：22.71037</li>
+                        <li class ="h2 w3-black">地址：屏東縣長治鄉德和路2-6號</li>
+                    </a>
+                    </ul>
                 </div>
-            <?php } ?>
-        </div>
+            </div>
+        <?php } ?>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <footer class="w3-container w3-orange">
+            <h5>Footer</h5>
+            <p>Footer information goes here</p>
+        </footer>
     </body>
 
     </html>
+
 <?php } else {
     header("Location: login.php");
 } ?>

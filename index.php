@@ -101,12 +101,12 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="img_wrap">
-                        <img src="./images/introduction/show1.png" alt=""/>
+                        <img src="./assets/images/dashboard.png" alt=""/>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="img_wrap">
-                        <img src="./images/introduction/show2.png" alt=""/>
+                        <img src="./assets/images/dashboard_2.png" alt=""/>
                     </div>
                 </div>
                 <div class="col-sm-12">

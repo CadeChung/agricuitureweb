@@ -1,22 +1,22 @@
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
     font-weight: bold;
 }
 
 nav.navbar {
-  transition: 0.5s;
+    transition: 0.5s;
 }
 
 nav.navbar.navbar-default.navbar-fixed-top.navbar-top {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 nav.navbar.navbar-default.navbar-fixed-top.navbar-top a {
-  color: white;
-  transition: 0.5s;
+    color: white;
+    transition: 0.5s;
 }
 
 nav.navbar.navbar-default.navbar-fixed-top.navbar-top a:hover {
-  color: #ff6e3a;
+    color: #ff6e3a;
 }
 
 header.jumbotron::before {
@@ -36,93 +36,96 @@ header.jumbotron::before {
 }
 
 header.jumbotron {
-  background-color: transparent;
-  text-align: center;
-  margin-bottom: 0px;
+    background-color: transparent;
+    text-align: center;
+    margin-bottom: 0px;
 }
 
 header.jumbotron .container {
-  color: white;
-  padding: 150px 0px;
+    color: white;
+    padding: 150px 0px;
 }
 
 section {
-  padding: 30px 0px;
-  text-align: center;
+    padding: 30px 0px;
+    text-align: center;
 }
 
 section .section-heading {
-  margin-bottom: 50px;
-  font-size: 50px;
+    margin-bottom: 50px;
+    font-size: 50px;
 }
 
-section#section_intro .col-sm-12{
+section#section_intro .col-sm-12 {
     color: #B08115;
 }
 
-@media screen and (max-width: 768px){
-    section#section_intro h1{
+@media screen and (max-width: 768px) {
+    section#section_intro h1 {
         margin-top: 120px;
     }
 }
 
-section#section_intro .col-sm-6{
+section#section_intro .col-sm-6 {
     padding-right: 60px;
     padding-bottom: 80px;
 }
 
-section#section_intro .content-wrap{
+section#section_intro .content-wrap {
     border: solid 2px #ffff;
     border-radius: 10px;
     padding: 20px;
     height: 250px;
 }
 
-@media screen and (max-width: 768px){
-    section#section_intro .content-wrap{
+@media screen and (max-width: 768px) {
+    section#section_intro .content-wrap {
         height: 300px;
     }
 }
 
-section#section_intro .icon{
+section#section_intro .icon {
     font-size: 50px;
     color: #B08115;
 }
 
-section#section_intro ul{
+section#section_intro ul {
     text-align: left;
     margin-left: 130px;
     list-style: none;
     font-size: 20px;
 }
 
-@media screen and (max-width: 768px){
-    section#section_intro ul{
+@media screen and (max-width: 768px) {
+    section#section_intro ul {
         margin-left: 40px;
     }
 }
 
 section#section_intro ul li::before {
-  content: "●";
-  color: #F5B52C;
+    content: "●";
+    color: #F5B52C;
 }
 
-section#section_picture{
+section#section_picture {
     background-image: url("../images/backgrounds2.png");
-    background-size:contain
+    background-size: contain
 }
 
-section#section_picture hr{
+section#section_picture hr {
     max-width: cover;
     border: solid 3px #111;
 }
 
-section#section_picture .col-sm-6{
-    margin: 20px 0px; 
+section#section_picture .col-sm-6 {
+    margin: 20px 0px;
 }
 
 section#section_picture .img_wrap {
+    width: 500px;
     height: 300px;
+    border: 1px dashed #ccc;
+    display: table-cell;
     overflow: hidden;
 }
 
@@ -140,11 +143,11 @@ li.thick {
 
 body {
     background-image: url("../images/backgrounds.png");
-    background-size:contain
+    background-size: contain
 }
 
-@media screen and (max-width: 768px){
-    section#section_picture img{
+@media screen and (max-width: 768px) {
+    section#section_picture img {
         width: 350px;
     }
 }
