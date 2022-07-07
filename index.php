@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-top">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-top w3-black">
         <div class="container">
             <div class="navbar-header">
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#myNavbar">
@@ -38,13 +38,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"> </span>
             </button>
-            <a class="navbar-brand">智慧農業平台</a>
+            <a class="navbar-brand w3-text-orange w3-xlarge">智慧農業平台</a>
             </div>
             <div class="navbar-collapse collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#section_intro">平台功能</a></li>
-                <li><a href="#section_picture">平台畫面</a></li>
-                <li><a href="login.php">登入</a></li>
+                <li><a class = "w3-text-orange" href="#section_intro">平台功能</a></li>
+                <li><a class = "w3-text-orange" href="#section_picture">平台畫面</a></li>
+                <li><a class = "w3-text-orange" href="login.php">登入</a></li>
             </ul>
             </div>
         </div>

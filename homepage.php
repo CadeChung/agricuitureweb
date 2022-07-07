@@ -13,9 +13,14 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/homepage.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     </head>
 
     <body>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a class="navbar-brand w3-xlarge w3-text-orange" href="homepage.php">智慧農業物聯網平台</a>
+        </nav>
+
         <?php if ($_SESSION['username'] == 'admin') { ?>
             <!-- For Admin -->
             <div class="wrapper d-flex align-items-stretch">
@@ -110,31 +115,28 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
                     </ul>
                 </nav>
                 <!-- Page Content  -->
-                <div id="content" class="w3-container w3-margin-bottom" style="background-image: url(assets/images/bg_2.png);">
-                    <h1 class="img w3-xxxlarge w3-padding-16 w3-center">
-                    智慧農業物聯網平台
-                    </h1>
+                <div id="content" class="w3-container w3-margin-bottom" style="background-image: url(assets/images/bg_2.png);
+                                         background-size: contain">
                     <iframe align="right" src="https://www.google.com/maps/d/u/0/embed?mid=1EPqt-noF3wpsN97MJy2_s8-dFSXfaE8&ehbc=2E312F" width="840" height="480">
                     </iframe>
                     <ul class="w3-ul w3-card" style="width:50%">
-                    <a class="h1 w3-left w3-black">花卉研究室溫室場域導覽
-                        <li class ="h2 w3-black">經度：120.52674</li>
-                        <li class ="h2 w3-black">緯度：22.71037</li>
-                        <li class ="h2 w3-black">地址：屏東縣長治鄉德和路2-6號</li>
-                    </a>
+                        <a class="jumbotron h1 w3-left bg-dark w3-text-orange">花卉研究室溫室場域導覽
+                            <li class="h2 w3-text-orange">經度：120.52674</li>
+                            <li class="h2 w3-text-orange">緯度：22.71037</li>
+                            <li class="h2 w3-text-orange">地址：屏東縣長治鄉德和路2-6號</li>
+                        </a>
                     </ul>
                 </div>
+                <script src="assets/js/jquery.min.js"></script>
+                <script src="assets/js/popper.js"></script>
+                <script src="assets/js/bootstrap.min.js"></script>
+                <script src="assets/js/main.js"></script>
             </div>
+            <footer class="navbar navbar-expand-md bg-white navbar-white">
+                <h5>資訊欄</h5>
+                <p>Footer information goes here</p>
+            </footer>
         <?php } ?>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/popper.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/main.js"></script>
-
-        <footer class="w3-container w3-orange">
-            <h5>Footer</h5>
-            <p>Footer information goes here</p>
-        </footer>
     </body>
 
     </html>
