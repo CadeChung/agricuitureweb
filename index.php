@@ -26,7 +26,6 @@
     <link href="./assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- custom js -->
-    <script src="./assets/js/script.js"></script>
 </head>
 
 <body>
@@ -130,5 +129,5 @@
 </html>
 
 <?php } else{
-    header("Location: homepage.php");
+    header("Location: home.php");
 }?>

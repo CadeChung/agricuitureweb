@@ -36,7 +36,7 @@ if (isset($_POST['username']) &&
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['username'] = $row['username'];
 
-                header("Location: ../homepage.php");
+                header("Location: ../home.php");
             } else {
                 header("Location: ../login.php?error=不正確的帳號密碼，請重新輸入!!");
             }

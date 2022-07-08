@@ -71,5 +71,5 @@
 </html>
 
 <?php } else{
-    header("Location: homepage.php");
+    header("Location: home.php");
 }?>
