@@ -33,7 +33,7 @@
                 </li>
 
                 <li class="nav-link">
-                    <a href="#">
+                    <a href="http://localhost:1880">
                         <i class='bx bxs-dashboard icon'></i>
                         <span class="text nav-text">網頁儀錶板</span>
                     </a>

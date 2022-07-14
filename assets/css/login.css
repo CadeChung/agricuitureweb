@@ -1,0 +1,62 @@
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+nav .image-text img {
+    width: 50px;
+    border-radius: 6px;
+}
+
+nav {
+    background-color: rgba(243, 127, 50, 0.925);
+    align-items: center;
+    justify-items: center;
+    margin: 0;
+}
+
+nav .image-text {
+    color: black;
+    font-size: 25px;
+}
+
+nav .image-text:hover {
+    color: #7f3aff;
+    transition: 0.3s;
+}
+
+.containet{
+    background-image: url(../images/login.png);
+    background-size: cover;
+    margin: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-position: center center;
+}
+
+.p-3 {
+    font-size: 25px;
+    color: rgb(23, 23, 24);
+}
+
+.btn {
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.mb-3 .form-control {
+    font-size: 25px;
+    color: rgb(44, 45, 48);
+    background-color: rgb(255, 239, 150);
+}

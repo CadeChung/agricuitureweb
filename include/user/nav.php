@@ -2,11 +2,11 @@
 <nav class="sidebar close">
     <header>
         <div class="image-text">
-            <span class="image">
+            <a href="home.php" class="image">
                 <img src="assets/images/logo.png" alt="">
-            </span>
+            </a>
 
-            <div class="text header-text">
+            <div class="text logo-text">
                 <span class="name">高雄農改場花卉研究室</span>
                 <span class="profession">智慧農業物聯網平台</span>
             </div>
@@ -33,7 +33,7 @@
                 </li>
 
                 <li class="nav-link">
-                    <a href="#">
+                    <a href="http://localhost:1880/ui">
                         <i class='bx bxs-dashboard icon'></i>
                         <span class="text nav-text">網頁儀錶板</span>
                     </a>
@@ -53,10 +53,27 @@
                     </a>
                 </li>
 
+                <li class="nav-link">
+                    <a href="http://61.216.185.18:5000/">
+                        <i class='bx bx-cloud-upload icon' ></i>
+                        <span class="text nav-text">資料上傳FTP</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
 
         <div class="bottom-content">
+            <div class="profile-details">
+                <div class="profile-content">
+                    <img src="assets/images/users.png" alt="profileImg">
+                </div>
+                <div class="text logo-text">
+                    <div class="name">歡迎 使用者</div>
+                    <div class="profession">Roderisk</div>
+                </div>
+            
+            </div>
             <li class="">
                 <a href="logout.php">
                     <i class='bx bx-log-out icon'></i>

@@ -1,22 +1,34 @@
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
     font-weight: bold;
+}
+
+nav .image-text img{
+    width: 50px;
+    border-radius: 6px;
 }
 
 nav.navbar {
     transition: 0.5s;
 }
 
-nav.navbar.navbar-default.navbar-fixed-top.navbar-top {
-    background-color: transparent;
-}
-
 nav.navbar.navbar-default.navbar-fixed-top.navbar-top a {
-    color: white;
-    transition: 0.5s;
+    color: black;
+    align-items: center;
+    justify-items: center;
+    transition: 0.3s;
 }
 
 nav.navbar.navbar-default.navbar-fixed-top.navbar-top a:hover {
-    color: #ff6e3a;
+    color: #7f3aff;
 }
 
 header.jumbotron::before {
@@ -38,17 +50,28 @@ header.jumbotron::before {
 header.jumbotron {
     background-color: transparent;
     text-align: center;
-    margin-bottom: 0px;
+    margin-bottom: 50px;
 }
 
 header.jumbotron .container {
     color: white;
-    padding: 150px 0px;
+    padding: 100px 0px;
+}
+
+nav .container{
+    color: rgb(12, 12, 11);
+    background: rgba(243, 127, 50, 0.925);
+    font-size: 25px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
 }
 
 section {
-    padding: 30px 0px;
+    padding: 50px 0px;
     text-align: center;
+    justify-items: center;
 }
 
 section .section-heading {
@@ -57,7 +80,7 @@ section .section-heading {
 }
 
 section#section_intro .col-sm-12 {
-    color: #B08115;
+    color: white;
 }
 
 @media screen and (max-width: 768px) {
@@ -67,6 +90,7 @@ section#section_intro .col-sm-12 {
 }
 
 section#section_intro .col-sm-6 {
+    color: #fff;
     padding-right: 60px;
     padding-bottom: 80px;
 }
@@ -86,7 +110,7 @@ section#section_intro .content-wrap {
 
 section#section_intro .icon {
     font-size: 50px;
-    color: #B08115;
+    color: white;
 }
 
 section#section_intro ul {
@@ -104,7 +128,7 @@ section#section_intro ul {
 
 section#section_intro ul li::before {
     content: "●";
-    color: #F5B52C;
+    color: white;
 }
 
 section#section_picture {
@@ -121,10 +145,14 @@ section#section_picture .col-sm-6 {
     margin: 20px 0px;
 }
 
+section#section_picture .col-sm-12 {
+    color: rgb(32, 86, 235);
+}
+
 section#section_picture .img_wrap {
     width: 500px;
-    height: 300px;
-    border: 1px dashed #ccc;
+    height: 200px;
+    border: 1px double #202022;
     display: table-cell;
     overflow: hidden;
 }

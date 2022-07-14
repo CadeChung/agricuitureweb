@@ -10,10 +10,10 @@
 :root{
     /* ===== Colors ===== */
     --body-color: #f1faeb;
-    --sidebar-color: rgb(183, 252, 200);
-    --primary-color: #308addd5;
+    --sidebar-color: #fad354fb;
+    --primary-color: #3c18db;
     --primary-color-light: #bedad8f3;
-    --toggle-color: rgb(248, 234, 225);
+    --toggle-color: #7f9fc4c0;
     --text-color: #222121;
 
     /* ====== Transition ====== */
