@@ -4,16 +4,7 @@
         format: "json"
     })
         .done(function (data) {
-            const weatherTypes = {
-                isThunderstorm: [15, 16, 17, 18, 21, 22, 33, 34, 35, 36, 41]
-            };
-
-            const weatherIcons = {
-                day: {
-                    isThunderstorm: <DayThunderstorm />
-                }
-            };
-
+            
             var eachTable = $('.each-table tbody');
             PoP12h = data.records.locations[0].location[0].weatherElement[0].time;
             Wx = data.records.locations[0].location[0].weatherElement[6].time;
@@ -37,3 +28,106 @@
             }
         });
 })();
+
+function getFlag(value, para) {
+    let _code = "";
+    let _img = "";
+    let _para = (para.data) ? para.data.coord[0] : para;
+    let _hour = _para.substring(6, 8);
+    let wx = wxList.find(function (item) {
+        return item.startTime.indexOf(_para) === 5
+    });
+    if (wx) {
+        _code = wx.elementValue[1].value;
+    }
+    switch (_code) {
+        case "01":
+        case "24":
+            if (_hour >= 18 || _hour < 6) {
+                _img = HostbaseUrl + 'images/cwbChart/weather-icon-02.svg';  //月亮
+            } else {
+                _img= HostbaseUrl + 'images/cwbChart/weather-icon-01.svg';  //太陽
+            }
+
+            break;
+        case "04":
+            _img= HostbaseUrl + 'images/cwbChart/weather-icon-05.svg';  //雲
+            break;
+        case "19":
+        case "21":
+            if (_hour >= 18 || _hour < 6) {
+                _img = HostbaseUrl + 'images/cwbChart/weather-icon-09.svg';  //晴天  日夜圖示不同 01 02
+            } else {
+                _img = HostbaseUrl + 'images/cwbChart/weather-icon-08.svg';  //晴天  日夜圖示不同 01 02
+            }
+            break;
+        case "03":
+        case "26":
+            if (_hour >= 18 || _hour < 6) {
+                _img = HostbaseUrl + 'images/cwbChart/weather-icon-03.svg';  //雲+月亮
+            } else {
+                _img = HostbaseUrl + 'images/cwbChart/weather-icon-04.svg';  //雲+太陽
+            }
+            break;
+
+        case "08":
+        case "09":
+        case "12":
+        case "20":
+        case "23":
+        case "29":
+        case "30":
+        case "31":
+        case "32":
+        case "37":
+        case "38":
+        case "15":
+        case "16":
+        case "22":
+        case "33":
+        case "34":
+        case "35":
+        case "36":
+        case "41":
+            _img = HostbaseUrl + 'images/cwbChart/weather-icon-06.svg'; //雨
+            break;
+        case "42":
+            _img= HostbaseUrl + 'images/cwbChart/weather-icon-10.svg'; //下雪'
+            break;
+        case "02":
+        case "25":
+            if (_hour >= 18 || _hour < 6) {
+                _img = HostbaseUrl + 'images/cwbChart/weather-icon-12.svg';  //月亮+雲
+            } else {
+                _img = HostbaseUrl + 'images/cwbChart/weather-icon-11.svg';  //太陽+雲
+            }
+            break;
+        case "05":
+        case "27":
+            _img = HostbaseUrl + 'images/cwbChart/weather-icon-13.svg';  //雲+烏雲
+            break;
+        case "06":
+            _img = HostbaseUrl + 'images/cwbChart/weather-icon-14.svg';  //烏雲+雲
+            break;
+        case "07":
+        case "28":
+            _img = HostbaseUrl + 'images/cwbChart/weather-icon-15.svg';  //烏雲
+            break;
+        case "10":
+        case "13":
+        case "17":
+            _img = HostbaseUrl + 'images/cwbChart/weather-icon-16.svg';  //烏雲+雲雨
+            break;
+        case "18":
+        case "14":
+        case "39":
+        case "11":
+            _img = HostbaseUrl + 'images/cwbChart/weather-icon-17.svg';  //烏雲雨
+            break;
+        default:
+            return "";
+    }
+    //console.log(_code);
+    //console.log(_img);
+    return _img;
+}

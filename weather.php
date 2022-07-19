@@ -14,7 +14,26 @@
 </head>
 
 <body>
-
+	<a class="weatherwidget-io" 
+	   href="https://forecast7.com/zh-tw/22d68120d53/changzhi/" 
+	   data-label_1="屏東縣長治鄉" 
+	   data-label_2="天氣預報" 
+	   data-font="微軟正黑體 (Microsoft JhengHei)" 
+	   data-theme="orange" 
+	   data-textcolor="#1d1c1a" 
+	   data-mooncolor="#0f0f0e" 
+	   data-cloudcolor="#0c0b0b">屏東縣長治鄉 天氣預報</a>
+	<script>
+		! function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (!d.getElementById(id)) {
+				js = d.createElement(s);
+				js.id = id;
+				js.src = 'https://weatherwidget.io/js/widget.min.js';
+				fjs.parentNode.insertBefore(js, fjs);
+			}
+		}(document, 'script', 'weatherwidget-io-js');
+	</script>
 	<table class="each-table" border="1">
 		<thead>
 			<tr>
@@ -27,8 +46,7 @@
 		<tbody>
 		</tbody>
 	</table>
-	<script src="assets/js/weather.js"></script>
-
+	<script src="assets/js/weather.js?v=<?= time() ?>"></script>
 </body>
 
 </html>
